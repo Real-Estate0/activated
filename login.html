@@ -60,25 +60,11 @@
   input[type="submit"]:hover {
     background: #ffb347;
   }
-  .bottom-text {
-    margin-top: 20px;
-    text-align: center;
-    font-weight: 300;
-    color: #bbb;
-  }
-  .bottom-text a {
-    color: #f7931a;
-    text-decoration: none;
-    font-weight: 600;
-  }
-  .bottom-text a:hover {
-    text-decoration: underline;
-  }
 </style>
 </head>
 <body>
 
-<form id="loginForm" action="dashboard.html" method="GET">
+<form id="loginForm">
   <h2>Login</h2>
   <label for="username">Username</label>
   <input type="text" id="username" name="username" required placeholder="Enter username" />
@@ -87,8 +73,15 @@
   <input type="password" id="password" name="password" required placeholder="Enter password" />
   
   <input type="submit" value="Login" />
-  
 </form>
+
+<script>
+  document.getElementById('loginForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    // Add validation here if needed
+    window.location.href = 'dashboard.html';
+  });
+</script>
 
 </body>
 </html>
